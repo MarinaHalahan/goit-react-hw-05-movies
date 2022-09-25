@@ -8,6 +8,30 @@ export const getTrendingFilms = async () => {
   return response.data.results;
 };
 
+export const getFilmById = async id => {
+  const response = await axios.get(`movie/${id}?api_key=${KEY}&language=en-US`);
+  return response.data;
+};
+
+export const getCastById = async id => {
+  const response = await axios.get(
+    `movie/${id}/credits?api_key=${KEY}&language=en-US`
+  );
+  return response.data.cast;
+};
+export const getReviewsById = async id => {
+  const response = await axios.get(
+    `movie/${id}/reviews?api_key=${KEY}&language=en-USpage=1`
+  );
+  return response.data.results;
+};
+export const getFilmBySearchWord = async query => {
+  const response = await axios.get(
+    `search/movie?api_key=${KEY}&language=en-US&query=${query}&page=1&include_adult=false`
+  );
+  return response.data.results;
+};
+
 // https://api.themoviedb.org/3/trending/movie/day?api_key=<<api_key>>
 // https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&include_adult=false
 // https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US

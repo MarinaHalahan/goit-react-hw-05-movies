@@ -12,23 +12,6 @@ export const Home = () => {
       .catch(error => console.log(error));
   }, []);
 
-  // const getTrends = async () => {
-  //   try {
-  //     const data = await getTrendingFilms();
-  //     console.log(data);
-  //     return data;
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-  // getTrendingFilms()
-  //   .then(res => {
-  //     trends = res.results;
-  //     console.log(trends);
-  //     return trends;
-  //   })
-  //   .catch(error => console.log(error));
-  // let trends = getTrends();
   return (
     <main>
       <Title>Trending today</Title>
