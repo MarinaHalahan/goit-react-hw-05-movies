@@ -3,7 +3,7 @@ import { getCastById } from '../../services/API';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Image from '../../images/no-img-picture.png';
+// import Image from '../../images/no-img-picture.png';
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
