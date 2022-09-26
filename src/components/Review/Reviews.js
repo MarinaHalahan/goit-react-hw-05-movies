@@ -19,7 +19,7 @@ const Reviews = () => {
         <ReviewList>
           {reviews.map(({ id, author, content }) => (
             <ReviewItem key={id}>
-              <ReviewInfo>Author: {author}</ReviewInfo>
+              <ReviewInfo bold>Author: {author}</ReviewInfo>
 
               <ReviewInfo>{content}</ReviewInfo>
             </ReviewItem>

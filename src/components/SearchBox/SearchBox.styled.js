@@ -1,22 +1,21 @@
 import styled from 'styled-components';
 
 export const SearchWrap = styled.form`
-  /* display: inline-flex;
+  padding-top: 15px;
+  padding-left: 15px;
+  display: inline-flex;
   align-items: center;
-  position: relative;
-  margin-bottom: 16px;
-  text-transform: uppercase; */
+
+  text-transform: uppercase;
 `;
 
 export const Input = styled.input`
-  /* padding: 8px 32px 8px 8px;
+  padding: 4px 4px 4px 4px;
   border-radius: 4px;
-  font: inherit; */
+  margin-right: 8px;
 `;
 
 export const SearchBtn = styled.button`
-  /* width: 20px;
-  height: 20px;
-  position: absolute;
-  right: 6px; */
+  padding: 3px 10px 3px 10px;
+  cursor: pointer;
 `;

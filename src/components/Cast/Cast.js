@@ -2,6 +2,7 @@ import { CastList, CastItem, ImgCast, InfoCast } from './Cast.styled';
 import { getCastById } from '../../services/API';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
 import Image from '../../images/no-img-picture.png';
 
 const Cast = () => {
@@ -25,7 +26,7 @@ const Cast = () => {
             }
             alt={name}
           />
-          <InfoCast>{name}</InfoCast>
+          <InfoCast bold>{name}</InfoCast>
           <InfoCast>
             Character: {character === '' ? 'No information.' : character}
           </InfoCast>
@@ -34,4 +35,5 @@ const Cast = () => {
     </CastList>
   );
 };
+
 export default Cast;

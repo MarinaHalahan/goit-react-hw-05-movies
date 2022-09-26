@@ -1,9 +1,10 @@
 import { ListWrap, ListItem } from './FilmList.styled';
 import { Link, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const FilmList = ({ films }) => {
   const location = useLocation();
-  console.log(films);
+
   return (
     <ListWrap>
       {films.map(({ id, title }) => (
@@ -21,5 +22,7 @@ const FilmList = ({ films }) => {
     </ListWrap>
   );
 };
-
+FilmList.propTypes = {
+  films: PropTypes.array,
+};
 export default FilmList;

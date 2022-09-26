@@ -20,9 +20,8 @@ const MovieDetails = () => {
   const [genres, setGenres] = useState([]);
   const { movieId } = useParams();
   const location = useLocation();
-  console.log(location);
   const backLink = location.state?.from;
-  // console.log(backLink);
+
   useEffect(() => {
     getFilmById(Number(movieId))
       .then(res => {
@@ -31,27 +30,29 @@ const MovieDetails = () => {
       })
       .catch(error => console.log(error));
   }, [movieId]);
-  const { backdrop_path, title, vote_average, overview } = movie;
+  const { poster_path, title, vote_average, overview } = movie;
 
   return (
     <main>
       {movie && (
-        <GeneralInfoWrap>
+        <>
           <Link to={backLink}>
             <BackBtn>Back</BackBtn>
           </Link>
-          <Poster
-            src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
-            alt={title}
-          />
-          <FilmInfo>
-            <FilmTitle>{title}</FilmTitle>
-            <InfoText>User Score: {vote_average}</InfoText>
-            <Overview>Overview</Overview>
-            <InfoText>{overview}</InfoText>
-            <Genres>Genres</Genres>
-            <InfoText>{genres.map(({ name }) => name).join(' ')}</InfoText>
-          </FilmInfo>
+          <GeneralInfoWrap>
+            <Poster
+              src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+              alt={title}
+            />
+            <FilmInfo>
+              <FilmTitle>{title}</FilmTitle>
+              <InfoText>User Score: {vote_average}</InfoText>
+              <Overview>Overview</Overview>
+              <InfoText>{overview}</InfoText>
+              <Genres>Genres</Genres>
+              <InfoText>{genres.map(({ name }) => name).join(' ')}</InfoText>
+            </FilmInfo>
+          </GeneralInfoWrap>
           <AdditionalBox>
             Additional information
             <AdditionalItem>
@@ -66,7 +67,7 @@ const MovieDetails = () => {
             </AdditionalItem>
           </AdditionalBox>
           <Outlet />
-        </GeneralInfoWrap>
+        </>
       )}
     </main>
   );

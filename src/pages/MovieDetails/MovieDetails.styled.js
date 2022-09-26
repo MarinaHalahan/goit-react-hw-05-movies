@@ -1,8 +1,17 @@
 import styled from 'styled-components';
 
-const GeneralInfoWrap = styled.div``;
+const GeneralInfoWrap = styled.div`
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  gap: 15px;
+  border-bottom: 1px solid grey;
+`;
 const FilmTitle = styled.h1``;
-const Poster = styled.img``;
+const Poster = styled.img`
+  width: 300px;
+  height: 350px;
+`;
 const FilmInfo = styled.div``;
 const InfoText = styled.p``;
 const Overview = styled.h2``;

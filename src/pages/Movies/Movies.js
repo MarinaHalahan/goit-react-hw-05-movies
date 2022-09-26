@@ -19,7 +19,6 @@ const Movies = () => {
     }
     getFilmBySearchWord(query)
       .then(res => {
-        console.log(res);
         if (res.length === 0) {
           alert('Nothing was found. Try new request.');
           return;
