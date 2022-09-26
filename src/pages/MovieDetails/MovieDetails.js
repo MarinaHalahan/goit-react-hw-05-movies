@@ -22,7 +22,7 @@ const MovieDetails = () => {
   const location = useLocation();
   console.log(location);
   const backLink = location.state?.from;
-
+  // console.log(backLink);
   useEffect(() => {
     getFilmById(Number(movieId))
       .then(res => {
@@ -55,10 +55,14 @@ const MovieDetails = () => {
           <AdditionalBox>
             Additional information
             <AdditionalItem>
-              <NavLink to="cast">Cast</NavLink>
+              <NavLink to="cast" state={{ from: location.state.from }}>
+                Cast
+              </NavLink>
             </AdditionalItem>
             <AdditionalItem>
-              <NavLink to="reviews">Reviews</NavLink>
+              <NavLink to="reviews" state={{ from: location.state.from }}>
+                Reviews
+              </NavLink>
             </AdditionalItem>
           </AdditionalBox>
           <Outlet />

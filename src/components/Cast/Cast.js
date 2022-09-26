@@ -12,7 +12,6 @@ const Cast = () => {
       .then(res => setCast(res))
       .catch(error => console.log(error));
   }, [movieId]);
-  console.log(cast);
 
   return (
     <CastList>
