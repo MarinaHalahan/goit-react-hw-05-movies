@@ -22,7 +22,7 @@ const Cast = () => {
             src={
               profile_path
                 ? `https://image.tmdb.org/t/p/w500${profile_path}`
-                : Image
+                : '../../images/no-img-picture.png'
             }
             alt={name}
           />
